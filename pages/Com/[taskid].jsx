@@ -28,8 +28,7 @@ export default function Task({ taskData }) {
       "task_Name": taskData.task_Name,
       "desc": description,
       "isComplet": performeTask,
-      "date": startDate,
-      "to_Do_By": taskData.to_Do_By
+      "date": startDate
     }
 
     // console.log(newTask);
@@ -63,7 +62,7 @@ export default function Task({ taskData }) {
               </button>
             </div>
             <p>Description: {taskData.desc}</p>
-            <p>To Do By: {moment(taskData.date).format('DD/MM/YYYY')} {taskData.to_Do_By}</p>
+            <p>To Do By: {moment(taskData.date).format('DD/MM/YYYY')}</p>
             {taskData.isComplet ? <p>The assignment is done!</p> : <p>The task still needs to be done!</p>}
 
           </div>
@@ -104,10 +103,6 @@ export default function Task({ taskData }) {
               <div >
                 <h4>Date</h4>
                 <ReactDatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
-              </div>
-              <div>
-                <h4>Time</h4>
-                <p>*A timer must be added*</p>
               </div>
             </div>
 

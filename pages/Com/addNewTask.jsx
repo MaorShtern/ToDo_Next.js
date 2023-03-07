@@ -11,7 +11,6 @@ import "react-datepicker/dist/react-datepicker.css";
 import Router from "next/router";
 
 
-
 export default function addNewTask() {
 
     const [name, setName] = useState("No Name")
@@ -22,11 +21,6 @@ export default function addNewTask() {
 
     
     const Save_New_Task = async () => {
-        let timeStemp = new Date().toLocaleTimeString("en-US", {
-            hour: "2-digit",
-            minute: "2-digit",
-            hour12: false
-        })
       
         let task ={
             "id":-1,
@@ -34,7 +28,6 @@ export default function addNewTask() {
             "desc":description,
             "isComplet":isComplet,
             "date":moment(date).format('L'),
-            "to_Do_By":timeStemp
         }
 
         const res = await fetch('http://localhost:3000/api/api',{
@@ -48,10 +41,6 @@ export default function addNewTask() {
         }
 
     }
-
-
-
-    // console.log(newTask);
 
 
     return (
@@ -97,10 +86,6 @@ export default function addNewTask() {
                             <ReactDatePicker selected={date}
                             onChange={(date) => setDate(date)} 
                             />
-                        </div>
-                        <div>
-                            <h4>Time</h4>
-                            <p>*A timer must be added*</p>
                         </div>
                     </div>
 

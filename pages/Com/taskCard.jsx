@@ -33,7 +33,7 @@ export default function taskCard(props) {
                 <div style={{ padding: 7 }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                         <h2><ins>{task.task_Name}</ins></h2>
-                        <p> To Do By: {moment(task.date).format('DD/MM/YYYY')} {task.to_Do_By}</p>
+                        <p> To Do By: {moment(task.date).format('DD/MM/YYYY')}</p>
                     </div>
                     <Card.Divider />
                     <div>
